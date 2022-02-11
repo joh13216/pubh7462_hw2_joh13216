@@ -109,7 +109,8 @@ tidy_brfss %>%
   tab_header("Sample Size and Proportion of Responses Across Locations in MN") %>%
   cols_label(response = "Response", sample_size_mean = "Mean of Sample Size", sample_size_sd = "Standard Deviation of Sample Size", prop_responses_mean = "Mean of Proportion", prop_responses_sd = "Standard Deviation of Proportion" ) %>%
   cols_align("center") %>%
-  fmt_number(columns = c(sample_size_mean, sample_size_sd, prop_responses_mean, prop_responses_sd), decimals = 2)
+  fmt_number(columns = c(sample_size_mean, sample_size_sd, prop_responses_mean, prop_responses_sd), decimals = 2) %>%
+  as_raw_html() # Trying to fix weird output in github document
 ```
 
 This table shows the mean and standard deviation for the sample size and proportion of each response. It is grouped by the years 2002, 2006, and 2010.
